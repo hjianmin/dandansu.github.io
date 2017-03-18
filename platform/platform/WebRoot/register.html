@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>欢迎注册</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	
+	<body class="login_body">
+		<div class="login_div">
+			<div class="col-xs-12 register_title">注册</div>
+			<form class="register" action="<%=request.getContextPath() %>/servlet/RegisterServlet" method="post">
+				<div class="nav">
+					<div class="nav register_nav">
+						<div class="col-xs-4">
+							用户名:
+						</div>
+						<div class="col-xs-6">
+							<input type="text" name="name_r" id="name_r" value="" placeholder="&nbsp;&nbsp;请输入用户名/手机号" onBlur="javascript:ok_or_errorByRegister(this)" />
+						</div>
+					</div>
+					<div class="nav register_psdnav">
+						<div class="col-xs-4">
+							邮&nbsp;&nbsp;&nbsp;箱:
+						</div>
+						<div class="col-xs-6">
+							<input type="email" name="email" id="email_r" value="" placeholder="&nbsp;&nbsp;请输入邮箱" onBlur="" />
+						</div>
+					</div>
+					<div class="nav register_psdnav">
+						<div class="col-xs-4">
+							密&nbsp;&nbsp;&nbsp;码:
+						</div>
+						<div class="col-xs-6">
+							<input type="password" name="pwd" id="r_pwd" value="" placeholder="&nbsp;&nbsp;密码" onBlur="javascript:ok_or_errorByRegister(this)" />
+						</div>
+					</div>
+					<div class="nav register_affirm">
+						<div class="col-xs-4">
+							确认密码:
+						</div>
+						<div class="col-xs-6">
+							<input type="password" name="confirmPwd" id="affirm_psd" value="" placeholder="&nbsp;&nbsp;确认密码" onBlur="javascript:ok_or_errorByRegister(this)" />
+						</div>
+					</div>
+					<div class="col-xs-12 register_btn_div">
+						<input type="submit" class="sub_btn" value="注册" id="register" />
+					</div>
+				</div>
+			</form>
+			<div class="col-xs-12 barter_register">
+				<button class="barter_registerBtn" onClick="javascript:barter_btn(this)" style="">已有秘籍?返回登录</button>
+			</div>
+		</div>
+	</body>
+</html>
