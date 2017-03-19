@@ -27,12 +27,21 @@
   	<url-pattern>/servlet/LoginServlet</url-pattern>
   </servlet-mapping>
   <!-- 图片验证码 -->
-  <servlet>
+ 	 <servlet>
 		<servlet-name>validateCodeServlet</servlet-name>
 		<servlet-class>platform.servlet.ValidateCodeServlet</servlet-class>
 	</servlet>	
 	<servlet-mapping>
 		<servlet-name>validateCodeServlet</servlet-name>
 		<url-pattern>*.images</url-pattern>
+	</servlet-mapping>
+	
+	 <servlet>
+		<servlet-name>SseServlet</servlet-name>
+		<servlet-class>platform.servlet.SseServlet</servlet-class>
+	</servlet>	
+	<servlet-mapping>
+		<servlet-name>SseServlet</servlet-name>
+		<url-pattern>/SseServlet</url-pattern>
 	</servlet-mapping>
 </web-app>
