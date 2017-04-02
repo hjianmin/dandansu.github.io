@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8"); // 请求
 		response.setHeader("Charset", "utf-8");
 		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		// 获取用户填写的登录用户名
 		String username = request.getParameter("username");
 		// 获取用户填写的登录密码
@@ -47,20 +48,38 @@ public class LoginServlet extends HttpServlet {
 			try {
 				result = (Integer) UserDao.ifExitUser(username);
 				if (result == 0) {
-					System.out.println("用户不存在！");
+					log.info("用户不存在！");
 					message = "用户不存在！";
 				} else {
-					System.out.println("用户存在！");
+					log.info("用户存在！");
 					// 验证密码
 					boolean flag = UserDao.verifyPwd(username, password);
 					if (flag == true) {
-						System.out.println("密码校验通过！");
+						log.info("密码校验通过！");
+						message = "登录成功！";
+						/*
+						 * request.getRequestDispatcher("/register.jsp").forward(
+						 * request, response);
+						 */
+						// response.sendRedirect("/platform/register.jsp");//
+						// 重定向
+
+						// 登录成功后，就将用户存储到session中
+						request.getSession().setAttribute("user", username);
+						message = String
+								.format("恭喜：%s,登陆成功！本页将在秒后跳到首页！！<meta http-equiv='refresh' content=';url=%s'",
+										username, request.getContextPath()
+												+ "/register.jsp");
+						request.getRequestDispatcher("/register.jsp").forward(
+								request, response);
 					} else {
 						message = "密码输入错误！";
 					}
 				}
 				request.setAttribute("message", message);
 			} catch (SQLException e) {
+				message = "系统出错！";
+				request.setAttribute("message", message);
 				e.printStackTrace();
 			}
 		} else {

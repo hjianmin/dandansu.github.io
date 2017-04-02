@@ -11,7 +11,7 @@
             <script>
             var es = new EventSource("<%=request.getContextPath() %>/SseServlet");//创建EventSource对象，将要连接的URL作为它唯一的参数。这里是连接到basic_sse.php
             es.addEventListener("message", function(e){
-              document.getElementById("x").innerHTML += "\n" + e.data;//运态修改页面内容。
+              document.getElementById("x").innerHTML += "\n" + e.data;//动态修改页面内容。
               },false);
             </script>。
           </body>

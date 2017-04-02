@@ -1,6 +1,7 @@
 package platform.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.HashMap;
 
@@ -26,34 +27,42 @@ public class RegisterServlet extends HttpServlet {
 	private Log log = LogFactory.getLog(RegisterServlet.class);
 
 	@Override
-	protected void doPost(HttpServletRequest request,
+	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// 处理中文的乱码
 		response.setContentType("text/html;charset=utf-8");// 响应
 		request.setCharacterEncoding("utf-8"); // 请求
 		String name = request.getParameter("username"); // username是输入框对应的name
 		String pwd = request.getParameter("userpwd");
+		String email = request.getParameter("email");
 		log.info("注册用户！");
 		HashMap<Object, Object> map = new HashMap<Object, Object>();
 		String string = request.getSession().toString();
-		String code = request.getParameter("code");
 		map.put("id", "3");
 		map.put("username", name);
 		map.put("userpwd", pwd);
-		map.put("email", "122121@qq.com");
+		map.put("email", email);
+		String message = "";
 		try {
 			UserDao.addUser(map);
+			message = "注册成功！";
 		} catch (SQLException e) {
 			e.printStackTrace();
+			message = "系统出错！";
 		}
-		super.doPost(request, response);
+		request.setAttribute("message", message);
+
+		PrintWriter out = response.getWriter();
+		out.print(message);
+		out.flush();
+		out.close();
 	}
 
 	@Override
-	protected void doGet(HttpServletRequest request,
+	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		super.doGet(request, response);
+		doGet(request, response);
 	}
 
 }
