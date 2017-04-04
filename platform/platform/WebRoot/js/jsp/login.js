@@ -60,13 +60,12 @@ function login(){
 	var psd_state = $('#pwd');
 	var name = $('#username').val();
 	var psd = $('#userpwd').val();
-
 	$.ajax({
         url: getContextPath() + "/servlet/LoginServlet",
         type:"post",
         data:{
         	username:name,
-        	userpwd:psd,
+        	userpwd:md5(psd),
         	code:code
         	},
         success:function(response){
@@ -82,7 +81,9 @@ function login(){
         	}else if(response == "系统出错！"){
             	alert(response);
         	}else{
-        		window.location.href = "register.jsp";
+        		/*window.location.href = "register.jsp";*/
+        		console.log="登录成功！";
+        		window.location.href = getContextPath() + "/servlet/LoginUIServlet";
         	}
         },
         error:function(e){

@@ -69,9 +69,8 @@
 		var name = $('#username').val();
 		var email = $('#email').val();
 		var confirmPwd = $('#confirmPwd').val();
-		alert(confirmPwd);
 		if(name == "" || email == "" || confirmPwd == ""){
-			alert("有空值，请检查！");
+			alert("请完善资料填写！");
 			return ;
 		}
 		
@@ -80,7 +79,7 @@
 	        type:"post",
 	        data:{
 	        	username:name,
-	        	userpwd:confirmPwd,
+	        	userpwd:md5(confirmPwd),
 	        	email:email
 	        	},
 	        success:function(response){

@@ -8,9 +8,10 @@
 		
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/login.css" />
-		<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jsp/login.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.0.0.min.js" type="text/javascript" ></script>
+		<script src="js/bootstrap.js" type="text/javascript" ></script>
+		<script src="js/md5.js" type="text/javascript" ></script>
+		<script src="js/jsp/login.js" type="text/javascript" ></script>
 	</head>
 	<body class="login_body">
 		<div class="login_div">
@@ -21,7 +22,7 @@
 						<div class="col-xs-4 input_title">
 							用户名:
 						</div>
-						<div class="col-xs-5" style="padding-right:0px;">
+						<div class="col-xs-5 " style="padding-right:0px;">
 							<input class="input"  type="text" name="username" id="username" 
 								placeholder="&nbsp;&nbsp;请输入用户名" data-toggle="popover" 
 								data-content="用户名输入错误！" />

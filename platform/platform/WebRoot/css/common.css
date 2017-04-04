@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+.footer_style
+{
+	border-top: 1px solid #dfdfdf;
+	margin-top: 60px;
+	line-height: 44px;
+	text-align: center;
+	margin:0px;
+}
+.a_style{
+	text-decoration: none;
+	outline: 0;
+	color: #676767;
+}
+html,body
+{
+	height:100%
+}
+.footer 
+{
+	margin-top:-30px;
+	margin-bottom:0px;
+	height:30px;
+	background-color:#eee;
+}
+.wrap{
+	min-height:100%
+}
+		
+.main{
+	padding-bottom:30px;
+	overflow:hidden;
+}

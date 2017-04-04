@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+body 
+{ 
+	padding-bottom: 70px;
+	background: url(../images/bg.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+}
+
+.logo {
+    float: left; /*设置悬浮的位置*/
+    margin-right: 30px; /*对象右边的外延边距*/
+    margin-left: 30px; /*对象左边的外延边距*/
+    font-size: 1.7em;
+    color: #400040;
+    text-transform: uppercase; /*变成大写*/
+    /*letter-spacing: 0px;!*字体间的间隙*!*/
+    padding-top: 9px; /*距离所在的容器的顶部的距离*/
+    font-weight: bold;
+}

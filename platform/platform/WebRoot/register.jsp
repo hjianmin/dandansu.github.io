@@ -8,10 +8,10 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/login.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-		<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jsp/register.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.0.0.min.js" type="text/javascript"></script>
+		<script src="js/jquery-ui.js" type="text/javascript"></script>
+		<script src="js/md5.js" type="text/javascript"></script>
+		<script src="js/jsp/register.js" type="text/javascript"></script>
 	</head>
 	
 	<body class="login_body">

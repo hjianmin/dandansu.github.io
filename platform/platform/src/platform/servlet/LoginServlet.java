@@ -57,21 +57,15 @@ public class LoginServlet extends HttpServlet {
 					if (flag == true) {
 						log.info("密码校验通过！");
 						message = "登录成功！";
-						/*
-						 * request.getRequestDispatcher("/register.jsp").forward(
-						 * request, response);
-						 */
-						// response.sendRedirect("/platform/register.jsp");//
-						// 重定向
-
 						// 登录成功后，就将用户存储到session中
 						request.getSession().setAttribute("user", username);
 						message = String
 								.format("恭喜：%s,登陆成功！本页将在秒后跳到首页！！<meta http-equiv='refresh' content=';url=%s'",
 										username, request.getContextPath()
-												+ "/register.jsp");
-						request.getRequestDispatcher("/register.jsp").forward(
-								request, response);
+												+ "/WEB-INF/views/index.jsp");
+						request.getRequestDispatcher("/WEB-INF/views/index.jsp")
+								.forward(request, response);
+						System.out.println(message);
 					} else {
 						message = "密码输入错误！";
 					}
